@@ -7,13 +7,11 @@ import 'package:platzi_trips_app/User/ui/widgets/button_bar.dart';
 import 'package:platzi_trips_app/User/ui/widgets/user_info.dart';
 
 class ProfileHeader extends StatelessWidget {
-  UserBloc userBloc;
+
   User user;
+  ProfileHeader();
   @override
   Widget build(BuildContext context) {
-    userBloc = BlocProvider.of(context);
-
-
     return StreamBuilder(
       stream: userBloc.authStatus,
       builder: (BuildContext, AsyncSnapshot<FirebaseUser> snapshot) {
